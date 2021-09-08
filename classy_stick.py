@@ -6,7 +6,7 @@ from Crypto.Hash import keccak
 from eth_abi.packed import encode_abi_packed
 import random
 import time
-
+import os
 
 class StickTheMiner:
     def __init__(self, chain_id, entropy, gemAddr, senderAddr, kind, nonce, diff):
@@ -40,7 +40,5 @@ class StickTheMiner:
 
             if ix < self.target:
                 print("done! here's the salt - ", salt)
+                os.system('say "You got salt!"')
                 return salt
-
-            if i % 5000 == 0:
-                print(f'iter {i}, {i / (time.time() - st)} avg iter per sec')
