@@ -11,8 +11,8 @@ from classy_stick import StickTheMiner
 # config here
 w3 = Web3(Web3.HTTPProvider(
     'https://mainnet.infura.io/v3/5ef6e492a9654830ad8e9e81a5129da8'))
-your_address = ["0xea01D78F8a5f8AcA51aD00012c601Cc7B3479e3F",
-                "0xC6119CFe3a58135AFa48a520B137C9f285A2C942"][int(sys.argv[1])]  # my address don't use it.
+your_address = ["0x",
+                "0x"][int(sys.argv[1])]  # my address don't use it.
 kind = int(sys.argv[2])  # gem type
 
 # glhf - no need to change

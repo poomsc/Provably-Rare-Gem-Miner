@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@alch/alchemy-web3": "^1.1.4",
     "alch": "^0.0.2",
     "bn.js": "^5.2.0",
     "crypto": "^1.0.1",

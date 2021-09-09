@@ -37,7 +37,7 @@ var cancel = false;
 const KIND = "9";
 const CHAIN_ID = "1";
 
-const PROVABLY_ADDRESS = "0xC67DED0eC78b849e17771b2E8a7e303B4dAd6dD4";
+const PROVABLY_ADDRESS = "0x";
 const ADDR = "";
 
 const provably = new web3.eth.Contract(ABI as any, PROVABLY_ADDRESS);
@@ -97,8 +97,6 @@ const infLoop = async () => {
     console.log("salt", salt.toString());
     console.log("ans", ans);
     console.log("diff", difficulty);
-    // console.log("real", await provably.methods.luck(KIND, salt).call());
-    // console.log("diff", MAX_UINT.div(new BN(difficulty)).toString());
     if (new BN(2).pow(new BN(256)).div(new BN(difficulty)).gte(new BN(ans))) {
       console.log("ANSWER:", salt.toString());
       process.exit();
