@@ -5,13 +5,13 @@
 from Crypto.Hash import keccak
 from eth_abi.packed import encode_abi_packed
 import random
-import time
 import os
 
 class StickTheMiner:
     def __init__(self, chain_id, entropy, gemAddr, senderAddr, kind, nonce, diff):
         self.task = [chain_id, entropy, gemAddr, senderAddr, kind, nonce]
         self.target = 2 ** 256 / diff
+        self.diff = diff
 
     @staticmethod
     def pack_mine(chain_id, entropy, gemAddr, senderAddr, kind, nonce, salt) -> bytes:
@@ -30,8 +30,7 @@ class StickTheMiner:
         return random.randint(1, 2 ** 123)  # can probably go to 256 but 123 probably enough
 
     def run(self):
-        i = 0
-        st = time.time()
+        i = self.diff
         while True:
             i += 1
             salt = self.get_salt()
