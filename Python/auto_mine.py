@@ -10,8 +10,9 @@ from classy_stick import StickTheMiner
 
 # config here
 w3 = Web3(Web3.HTTPProvider(
-    'https://mainnet.infura.io/v3/5ef6e492a9654830ad8e9e81a5129da8'))
+    'https://mainnet.infura.io/v3/<infuraKey>'))
 your_address = ["0x",
+                "0x",
                 "0x"][int(sys.argv[1])]  # my address don't use it.
 kind = int(sys.argv[2])  # gem type
 
@@ -28,6 +29,7 @@ nonce = gem_contract.functions.nonce(your_address).call()
 chain_id = 1  # eth
 
 print(f"difficulty : {difficulty}")
+print(f"address : {your_address}")
 stick = StickTheMiner(chain_id, entropy, gem_addr,
                       your_address, kind, nonce, difficulty)
 stick.run()

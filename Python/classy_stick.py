@@ -27,14 +27,14 @@ class StickTheMiner:
 
     @staticmethod
     def get_salt() -> int:
-        return random.randint(1, 2 ** 123)  # can probably go to 256 but 123 probably enough
+        return random.randint(1, 2 ** 256)  # can probably go to 256 but 123 probably enough
 
     def run(self):
-        i = self.diff
+        i = 0
         while True:
+            # salt = self.get_salt()
+            salt = i
             i += 1
-            salt = self.get_salt()
-            # salt = i
             hx, ix = self.mine(self.pack_mine(*self.task, salt))
 
             if ix < self.target:
