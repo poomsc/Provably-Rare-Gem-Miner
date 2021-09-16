@@ -1,3 +1,5 @@
+Fork from [Provably-Rare-Gem-Miner](https://github.com/yoyoismee/Provably-Rare-Gem-Miner)
+
 # Provably Rare Gem Miner
 
 ### just another random project by yoyoismee.eth
